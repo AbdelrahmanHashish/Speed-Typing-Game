@@ -1,0 +1,236 @@
+@charset "utf-8";
+/* CSS Document */
+
+/***** Start General Rules *****/
+*{
+	margin:0px;
+	padding:0px;
+	box-sizing:border-box;
+	font-family:"Poppins", sans-serif;
+}
+
+body{
+	display:flex;
+	padding:0px 10px;
+	align-items:center;
+	justify-content:center;
+	min-height:100vh;
+	background:linear-gradient(#007acc,#6DD5FA,#FFFFFF);
+}
+/***** End General Rules *****/
+
+p#paragraph{
+	color:#646669;
+}
+
+ul.result-details{
+	color:white;
+}
+
+::selection{
+	color:#fff;
+	background-color:#007acc;
+}
+
+div.wrapper{
+	width:700px;
+	padding:35px;
+	background-color:#1e1e1e;
+	border-radius:10px;
+	box-shadow:0px 10px 15px rgba(0,0,0,0.05);
+}
+
+div.wrapper input.input-field{
+	opacity:0;
+	z-index:-999;
+	position:absolute;
+}
+
+div.wrapper div.content-box{
+	padding:13px 20px 0px;
+	border-radius:10px;
+	border:4px solid #007acc;
+}
+
+div.wrapper div.content-box div.typing-text{
+	overflow:hidden;
+	max-height:256px;
+}
+
+div.wrapper div.content-box div.typing-text::-webkit-scrollbar{
+	width:0px;
+}
+
+div.wrapper div.content-box div.typing-text p{
+	font-size:21px;
+	text-align:justify;
+	letter-spacing:1px;
+	word-break:break-all;
+}
+
+div.wrapper div.content-box div.typing-text p span{
+	position:relative;
+}
+
+div.wrapper div.content-box div.typing-text p span.correct{
+	color:#d1d0c5;
+}
+
+div.wrapper div.content-box div.typing-text p span.incorrect{
+	color:#ca4754;
+	border-radius:4px;
+}
+
+div.wrapper div.content-box div.typing-text p span.active::before{
+	position:absolute;
+	content:"";
+	height:2px;
+	width:100%;
+	bottom:0px;
+	left:0px;
+	opacity:0px;
+	border-radius:5px;
+	background-color:#007acc;
+	animation:blink 1s ease-in-out infinite;
+}
+
+@keyframes blink{
+	50%{
+		opacity:1;
+	}
+}
+
+div.wrapper div.content-box div.content{
+	margin-top:17px;
+	display:flex;
+	padding:12px 0px;
+	flex-wrap:wrap;
+	align-items:center;
+	justify-content:space-between;
+	border-top:3px solid #007acc;
+}
+
+div.wrapper div.content-box div.content button{
+	outline:none;
+	width:105px;
+	color:#007acc;
+	padding:8px 0px;
+	font-size:17px;
+	font-weight:600;
+	cursor:pointer;
+	border-radius:15px;
+	border:3px solid #007acc;
+	background:none;
+	transition:transform 0.2s ease-in-out;
+}
+
+div.wrapper div.content-box div.content button:active{
+	transform:scale(0.89);
+	transform:-moz-scale(0.89);
+	transform:-ms-scale(0.89);
+	transform:-o-scale(0.89);
+	transform:-webkit-scale(0.89);
+}
+
+div.wrapper div.content-box div.content button:hover{
+	background-color:#ffffff;
+}
+
+div.wrapper div.content-box div.content ul.result-details{
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+	width:calc(100% - 140px);
+	justify-content:space-between;
+}
+
+div.wrapper div.content-box div.content ul.result-details li{
+	display:flex;
+	height:20px;
+	list-style:none;
+	position:relative;
+	align-items:center;
+}
+
+div.wrapper div.content-box div.content ul.result-details li:not(:first-child){
+	padding-left:22px;
+	border-left:2px solid #bfbfbf;
+}
+
+div.wrapper div.content-box div.content ul.result-details li p{
+	font-size:13px;
+}
+
+div.wrapper div.content-box div.content ul.result-details li span{
+	display:block;
+	font-size:13px;
+	margin-left:10px;
+}
+
+div.wrapper div.content-box div.content ul.result-details li span b{
+	font-weight:500;
+}
+
+div.wrapper div.content-box div.content ul.result-details li:not(:first-child) span{
+	font-weight:500;
+}
+
+@media (max-width:745px){
+	div.wrapper{
+		padding:20px;
+	}
+	
+	div.wrapper div.content-box div.content{
+		padding:20px 0px;
+	}
+	
+	div.wrapper div.content-box div.typing-text{
+		max-height:100%;
+	}
+	
+	div.wrapper div.content-box div.typing-text p{
+		font-size:19px;
+		text-align:left;
+	}
+	
+	div.wrapper div.content-box div.content button{
+		width:100%;
+		font-size:15px;
+		padding:10px 0px;
+		margin-top:20px;
+	}
+	
+	div.wrapper div.content-box div.content ul.result-details{
+		width:100%;
+	}
+	
+	div.wrapper div.content-box div.content ul.result-details li:not(:first-child){
+		border-left:0px;
+		padding:0px;
+	}
+	
+	div.wrapper div.content-box div.content ul.result-details li p ,
+	div.wrapper div.content-box div.content ul.result-details li span{
+		font-size:15px;
+	}
+	
+}
+
+@media (max-width:518px){
+	div.wrapper div.content-box{
+		padding:10px 15px 0px;
+	}
+	
+	div.wrapper div.content-box div.typing-text p{
+		font-size:13px;
+	}
+	
+	div.wrapper div.content-box div.content ul.result-details li{
+		margin-bottom:10px;
+	}
+	
+	div.wrapper div.content-box div.content button{
+		margin-top:10px;
+	}
+	
+}
